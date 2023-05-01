@@ -110,6 +110,14 @@ const SudoKu = () => {
         {status && gameStatus && (
           <h1>Congradulations You Have Completed The Game</h1>
         )}
+        <div style={{ margin: "10px" }}>
+          <Button
+            color="warning"
+            onClick={() => setInitialValues(generateRandomSudoku())}
+          >
+            Generate New Combinations
+          </Button>
+        </div>
         {/* <div className="">
           <Button color="success" onClick={() => setGameMode(4)}>
             Easy
