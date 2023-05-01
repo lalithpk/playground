@@ -12,13 +12,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
-const pages = ["Timer", "Custom Timer", "Blog"];
+import { useNavigate } from "react-router-dom";
+const pages = ["Timer", "CustomTimer", "SudoKu"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,7 +45,6 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -89,7 +89,12 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Button
+                    textAlign="center"
+                    onClick={() => navigate(`/${page}`)}
+                  >
+                    {page}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,8 +122,9 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                // onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                onClick={() => navigate(`/${page}`)}
               >
                 {page}
               </Button>

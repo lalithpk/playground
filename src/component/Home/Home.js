@@ -4,7 +4,6 @@ import Timer from "../Timer/Timer";
 const Home = () => {
   return (
     <div>
-      <ResponsiveAppBar />
       <Timer />
     </div>
   );
