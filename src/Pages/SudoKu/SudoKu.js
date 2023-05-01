@@ -107,7 +107,9 @@ const SudoKu = () => {
             )}
         </div>
         {!gameStatus && <h1>Not a Valid Sudoku</h1>}
-        {status && <h1>Congradulations You Have Completed The Game</h1>}
+        {status && gameStatus && (
+          <h1>Congradulations You Have Completed The Game</h1>
+        )}
         {/* <div className="">
           <Button color="success" onClick={() => setGameMode(4)}>
             Easy
