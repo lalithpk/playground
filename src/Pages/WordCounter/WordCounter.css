@@ -1,0 +1,8 @@
+.large{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 80%;
+  }
+  /* textarea:focus {
+    background: pink;
+  } */
